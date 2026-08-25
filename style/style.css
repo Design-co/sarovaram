@@ -737,7 +737,64 @@ p {
 .section-surface {
   background: #f3efe7;
 }
+/* Tablet: 3 per row, centered stack, dividers dropped */
+@media (max-width: 960px) {
+  .trust-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 1.75rem;
+  }
 
+  .trust-item {
+    flex: 0 1 calc(33.333% - 0.85rem);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    gap: 0.6rem;
+  }
+
+  .trust-item::after {
+    display: none;
+  }
+
+  .trust-text {
+    align-items: center;
+  }
+
+  .trust-text span {
+    white-space: normal;
+  }
+}
+
+/* Mobile: single column, centered stack — matches reference image */
+@media (max-width: 600px) {
+  .trust-bar {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.5rem;
+  }
+
+  .trust-item {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .trust-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
+  }
+
+  .trust-text strong {
+    font-size: 1.05rem;
+  }
+
+  .trust-text span {
+    font-size: 0.8rem;
+  }
+}
 /* ---------- Heritage ---------- */
 
 .heritage {
