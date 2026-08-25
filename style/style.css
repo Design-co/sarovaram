@@ -1308,17 +1308,20 @@ p {
 
 .feature-grid {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 1.25rem 1rem;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .feature-grid li {
+  flex: 1 1 calc(20% - 0.8rem);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.35rem;
+  min-width: 0;
 }
 
 .feature-grid i {
@@ -1401,14 +1404,19 @@ p {
   .video-inner {
     grid-template-columns: 1fr;
   }
-  .feature-grid {
-    grid-template-columns: repeat(3, 1fr);
+
+  .feature-grid li {
+    flex: 1 1 calc(33.333% - 0.85rem);
   }
 }
 
 @media (max-width: 560px) {
-  .feature-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .feature-grid li {
+    flex: 1 1 calc(50% - 0.6rem);
+  }
+
+  .video-poster img {
+    height: 260px;
   }
 }
 /* ---------- Experience carousel ---------- */
